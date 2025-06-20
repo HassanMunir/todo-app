@@ -61,3 +61,9 @@ jobs:
 
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Image Tags
+        run: |
+          REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          echo "IMAGE_TAG=ghcr.io/${REPO_OWNER}/todo-app/client:${{ github.sha }}" >> $GITHUB_ENV
+          echo "IMAGE_TAG_LATEST=ghcr.io/${REPO_OWNER}/todo-app/client:latest" >> $GITHUB_ENV
