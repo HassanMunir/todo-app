@@ -1,6 +1,6 @@
 name: GO CI pipeline
 
-on: 
+on:
   push:
     branches:
       - main
