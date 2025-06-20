@@ -43,3 +43,8 @@ jobs:
         run: |
           pip install semgrep
           semgrep --config=./client/semgrep.yml ./client/src/
+
+      - name: Verify frontend code formatting
+        run: |
+          cd client
+          npx prettier --check .
