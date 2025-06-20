@@ -38,3 +38,8 @@ jobs:
         run: |
           cd client
           npm run test
+
+      - name: Run Semgrep SAST on frontend
+        run: |
+          pip install semgrep
+          semgrep --config=./client/semgrep.yml ./client/src/
