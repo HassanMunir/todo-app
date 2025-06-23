@@ -67,3 +67,7 @@ jobs:
           REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
           echo "IMAGE_TAG=ghcr.io/${REPO_OWNER}/todo-app/client:${{ github.sha }}" >> $GITHUB_ENV
           echo "IMAGE_TAG_LATEST=ghcr.io/${REPO_OWNER}/todo-app/client:latest" >> $GITHUB_ENV
+
+      - name: Build Docker Image
+        run: |
+          docker build -t $IMAGE_TAG -t $IMAGE_TAG_LATEST .
