@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'server/**'
-      - '.github/workflows/backend.yml'
+      - "server/**"
+      - ".github/workflows/backend.yml"
   pull_request:
     branches:
       - main
@@ -28,7 +28,7 @@ jobs:
         run: |
           cd server
           go test -v ./...
-      
+
       - name: Run Semgrep SAST on frontend
         run: |
           pip install semgrep

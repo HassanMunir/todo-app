@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'client/**'
-      - '.github/workflows/frontend.yml'
+      - "client/**"
+      - ".github/workflows/frontend.yml"
   pull_request:
     branches:
       - main
