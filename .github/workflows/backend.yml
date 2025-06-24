@@ -28,3 +28,8 @@ jobs:
         run: |
           cd server
           go test -v ./...
+      
+      - name: Run Semgrep SAST on frontend
+        run: |
+          pip install semgrep
+          semgrep --config=./server/semgrep.yml ./server
